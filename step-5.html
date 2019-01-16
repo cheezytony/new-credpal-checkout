@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-cale=1.0">
+	<title>Checkout</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/checkout.css">
+	<link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css">
+</head>
+<body>
+	
+	<div class="cp-container">
+		<div class="cp-overlay"></div>
+		<div class="cp-checkout">
+			<div class="cp-header text-center">
+				<img src="../assets/img/logo-dark.png" alt="" height="30">
+			</div>
+			<div class="cp-title" style="padding: 0 30px; height: auto;">
+				<div class="text" style="line-height: 1.5; height: auto;">
+					Upload Document
+				</div>
+			</div>
+			<div class="cp-body" style="padding: 30px">
+				<div class="cp-file">
+					<div class="cp-file-title">
+						Bank Statements
+					</div>
+					<div class="cp-dz" data-text="Click To Add File Or Drop File Here">
+						<input type="file" name="" id="" class="cp-dz-file">
+					</div>
+					<button class="cp-file-btn">Upload</button>
+				</div>
+			</div>
+			<div class="cp-footer clearfix">
+				<button class="cp-button float-left">Prev</button>
+				<button class="cp-button float-right">Next</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$(function() {
+
+			$('body').on('change', '.cp-dz-file', function(event) {
+				file = this.files[0];
+				console.log(file);
+				$(this).closest('.cp-dz').attr('data-text', file.name);
+			});
+
+		});
+	</script>
+	
+</body>
+</html>

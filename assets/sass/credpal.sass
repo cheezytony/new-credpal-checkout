@@ -1,0 +1,490 @@
+$primary: #007bff
+$text: #777
+$light: #aaa
+$border-color: #eee
+$pink: #ff0090
+
+$Montserrat: (Thin, 100), (ExtraLight, 200), (Light, 300), (Regular, 400), (Medium, 500), (SemiBold, 600), (Bold, 700), (ExtraBold, 800), (Black, 900)
+
+@each $group in $Montserrat
+	@font-face
+		font-family: Montserrat
+		font-weight: nth($group, 2)
+		src: url('../fonts/Montserrat/Montserrat-#{nth($group, 1)}.ttf')
+
+@keyframes spin
+	from
+		-webkit-transform: rotate(0deg)
+		-ms-transform: rotate(0deg)
+		-o-transform: rotate(0deg)
+		transform: rotate(0deg)
+	to
+		-webkit-transform: rotate(359deg)
+		-ms-transform: rotate(359deg)
+		-o-transform: rotate(359deg)
+		transform: rotate(359deg)
+
+
+@keyframes zoomIn
+	from
+		-webkit-transform: scale(0)
+		-ms-transform: scale(0)
+		-o-transform: scale(0)
+		transform: scale(0)
+	to
+		-webkit-transform: scale(1)
+		-ms-transform: scale(1)
+		-o-transform: scale(1)
+		transform: scale(1)
+
+
+body
+	background: rgba($primary, .6)
+	font-family: Montserrat
+
+.cp
+	&-card
+		border-color: #f7f7f7
+	&-navigation
+		background: #fafafa
+		padding-bottom: 60px
+		position: relative
+		&-col
+			flex: 0 0 33.333333%
+			&.closed
+				flex-basis: 0
+				flex-grow: 0
+				.nav-link
+					.text
+						display: none
+				.cp-powered-by
+					padding: 2px
+					.text
+						display: none
+					img
+						&.full
+							display: none
+						&.mini
+							display: inline-block
+							height: 30px
+		.nav
+			&-item
+				padding: 0 1rem
+				&:not(:last-child)
+					.nav-link
+						border-bottom: 1px solid #f5f5f5
+			&-link
+				color: #bbb
+				font-size: 12px
+				padding: 10px 0
+				vertical-align: middle
+				&.active,
+				&:hover
+					.text
+						color: $text
+					.icon
+						color: $text
+				&.active
+					.icon
+						color: rgba($primary, .5)
+				.icon
+					color: rgba($text, .5)
+					font-size: 1.5em
+					display: inline-block
+					text-align: center
+					vertical-align: sub
+					width: 30px
+	&-powered-by
+		bottom: 0
+		font-size: 0.9em
+		left: 0
+		opacity: 0.5
+		padding: 0 1rem
+		pointer-events: none
+		position: absolute
+		text-align: center
+		width: 100%
+		.text
+			margin-right: 5px
+		img
+			height: 15px
+			&.mini
+				display: none
+		.icon
+			font-size: 1.5em
+			vertical-align: sub
+
+	&-form
+		min-height: 300px
+		.form
+			&-group
+				font-size: 10px
+				margin-bottom: 7px
+				label
+					color: rgba($primary, .5)
+					display: block
+					font-size: inherit
+					font-weight: 400
+					margin-bottom: 5px
+			&-control
+				// background: rgba($primary, .01)
+				border: 1px solid rgba($primary, .05)
+				border-radius: 3px
+				color: #aaa
+				font-size: inherit
+				height: auto
+				padding: 7px 10px
+				&:focus
+					border-color: rgba($primary, .5)
+					box-shadow: none
+	&-upload
+		border: 1px solid #f7f7f7
+		padding: 10px 15px
+		.title
+			cursor: pointer
+			font-size: 12px
+			margin-bottom: 1.25rem
+		&-btn
+			input
+				display: none
+
+
+
+.btn
+	border-radius: 3px
+	font-size: 12px
+	font-weight: 600
+	padding: 8px 30px
+	&-circle
+		border-radius: 999px
+		height: 35px
+		line-height: 35px
+		text-align: center
+		padding: 0
+		width: 35px
+	&-cp
+		background: $primary
+		color: #fff
+		&:hover
+			background: lighten($primary, 10%)
+			color: #fff
+		&.disabled
+			cursor: not-allowed
+			opacity: .4
+		&-light
+			background: #f7f7f7
+			color: #777
+			&:hover
+				background: lighten($text, 10%)
+				color: #fff
+			&.disabled
+				cursor: not-allowed
+				opacity: .4
+	&-default
+		color: #aaa
+	&-expand
+		top: 0
+		left: 0
+		position: absolute
+		-webkit-transform: translate(0px, 0%)
+		-ms-transform: translate(0px, 0%)
+		-o-transform: translate(0px, 0%)
+		transform: translate(0px, 0%)
+
+.cp-radio
+	&-label
+		display: inline-block
+		label
+			// background: rgba($primary, .01)
+			border: 1px solid rgba($primary, .05)
+			border-radius: 999px
+			cursor: pointer
+			display: inline-block
+			height: 40px
+			line-height: 40px
+			margin: 0px 10px 0 0
+			text-align: center
+			vertical-align: middle
+			width: 40px
+			.icon
+				font-size: 15px
+				
+		input
+			display: none
+			&:checked + label
+				background: rgba($primary, .1)
+				border-color: rgba($primary, .3)
+		&-lg
+			display: flex
+			margin-bottom: 10px
+			width: 100%
+			label
+				border-radius: 3px 0 0 3px
+				height: auto
+				line-height: 1.5
+				margin: 0 !important
+				padding: 10px 10px
+				text-align: left
+				width: 100%
+				p
+					margin-bottom: 0
+					opacity: .5
+			button
+				background: transparent
+				border: 1px solid rgba($primary, .05)
+				border-radius: 0 3px 3px 0
+				color: $light
+				cursor: pointer
+				font-size: 9px
+				margin-left: -1px
+				outline: none !important
+				padding: 7px 10px
+		&.pink
+			label
+				border-color: rgba($pink, .2)
+				color: $pink
+			input:checked + label
+					background: rgba($pink, .2)
+					border-color: rgba($pink, .4)
+
+
+.alert
+	border-radius: 3px
+	border: none
+	font-size: 12px
+	opacity: .5
+	padding: 7px 10px
+
+
+/************* JQUERY UI  **************/
+
+.ui-widget
+	font-family: inherit !important
+
+// JQuery Date Picker
+
+.ui-datepicker
+	border: none !important
+	box-shadow: 0 3px 10px rgba(#000, .3)
+	font-size: 12px
+	width: 250px
+	&-header
+		background-color: transparent
+		border: none
+		.ui-icon
+			opacity: .5
+	&-title
+		color: $text
+		font-weight: 400
+	&-next,
+	&-prev
+		border: none !important
+		cursor: pointer
+		&.ui-state-hover
+			border: none !important
+			margin: 0 !important
+
+	&-next
+		&-hover
+			right: 2px !important
+			top: 2px !important
+	&-prev
+		&-hover
+			left: 2px !important
+			top: 2px !important
+	.ui-state-default
+		background: transparent
+		border: none
+		border-radius: 3px
+		padding: 5px
+		text-align: center
+		&.ui-state-hover
+			background: rgba(#777, .1)
+
+
+// JQuery Select Menu
+
+.ui-selectmenu
+	&-button
+		background: transparent
+		border: 1px solid rgba($primary, .05)
+		border-radius: 3px
+		display: block
+		height: auto
+		outline: none !important
+		padding: 7px 10px
+		&:hover
+			background: transparent
+			border-color: rgba($primary, .05)
+		&:active,
+		&:focus
+			background: transparent
+			border-color: rgba($primary, .5)
+			box-shadow: none
+	&-text
+		color: #aaa
+		line-height: 1.5
+	&-icon
+		opacity: .5
+	&-menu
+		background: #fff
+		border: none
+		border-radius: 3px
+		box-shadow: 0 3px 10px rgba(#000, .3)
+		.ui-menu
+			border: none
+			&-item
+				&-wrapper
+					border: none
+					color: $light
+					font-size: 10px
+					padding: 7px 10px
+					&.ui-state-active
+						background: rgba($text, .1)
+						color: $text
+						margin: 0 !important
+
+p
+	font-size: 10px
+	color: $light
+
+.cc-image
+	display: block
+	margin: auto
+	max-width: 150px
+	margin-top: 3rem
+	margin-bottom: 2rem
+
+.cp
+	&-checkmark
+		display: block
+		height: 100px
+		margin: auto
+		position: relative
+		-webkit-transform: rotate(-45deg)
+		-ms-transform: rotate(-45deg)
+		-o-transform: rotate(-45deg)
+		transform: rotate(-45deg)
+		width: 100px
+		&:before,
+		&:after
+			content: ''
+			display: block
+		&:before
+			animation: spin 1s
+			animation-delay: .5s
+			border: 3px solid #0c5
+			border-right-color: #fff
+			border-radius: 999px
+			height: 100%
+			position: relative
+			width: 100%
+		&:after
+			animation: zoomIn 1s
+			animation-delay: .5s
+			border: 3px solid #0c5
+			border-right: none
+			border-top: none
+			height: 30%
+			left: 30px
+			position: absolute
+			top: 25px
+			-webkit-transform-origin: bottom left
+			-moz-transform-origin: bottom left
+			-ms-transform-origin: bottom left
+			-o-transform-origin: bottom left
+			transform-origin: bottom left
+			width: 70%
+
+.tab
+	display: none
+	transition: 1s
+	&-content
+		position: relative
+		transition: .5s
+		overflow: hidden
+	&.in
+		display: block
+		position: relative
+		&.left
+			transform: translate(-100%)
+			position: absolute !important
+			left: 0
+			right: 0
+		&.right
+			transform: translate(100%)
+			position: absolute !important
+			left: 0
+			right: 0
+		&.open
+			transform: translate(0)
+	&.open
+		display: block
+		transform: translate(0)
+
+
+.data-popover-content
+	display: none !important
+	opacity: 0 !important
+	visibility: hidden !important
+
+.popover
+	border: 1px solid #ddd
+	box-shadow: 0 3px 10px rgba(#000, .2)
+	border-radius: 5px
+	padding: 10px
+	.arrow
+		&:before
+			border-right-color: #ddd
+	&-header
+		background: transparent
+		border-bottom-color: #f7f7f7
+		font-weight: 300
+		font-size: 12px
+		padding: 0px 0px 10px
+	&-body
+		padding: 5px 0px 0
+		.list-group
+			&-item
+				color: #777
+				border-color: #f7f7f7
+				font-size: 12px
+				font-style: italic
+				font-weight: 300
+				opacity: .4
+				padding: 5px
+				b
+					font-weight: 400
+
+.loading
+	position: relative
+	&:after,
+	&:before
+		content: ''
+		display: block
+		position: absolute
+	&:before
+		background: #fff
+		height: 100%
+		left: 0
+		opacity: .8
+		top: 0
+		width: 100%
+		z-index: 100
+	&:after
+		animation: spin 1s linear infinite
+		background-color: transparent
+		border-radius: 999px
+		border: 2px solid #dfecfb
+		border-top-color: transparent
+		height: 70px
+		left: 50%
+		margin: -35px 0 0 -35px
+		top: 50%
+		width: 70px
+		z-index: 150
+
+.alert
+	&-warning
+		background: #ffe9e2
+		color: #e50

@@ -1,0 +1,483 @@
+@keyframes spin
+	from
+		-webkit-transform: rotate(0deg)
+		-ms-transform: rotate(0deg)
+		-o-transform: rotate(0deg)
+		transform: rotate(0deg)
+	to
+		-webkit-transform: rotate(359deg)
+		-ms-transform: rotate(359deg)
+		-o-transform: rotate(359deg)
+		transform: rotate(359deg)
+
+
+@keyframes zoomIn
+	from
+		-webkit-transform: scale(0)
+		-ms-transform: scale(0)
+		-o-transform: scale(0)
+		transform: scale(0)
+	to
+		-webkit-transform: scale(1)
+		-ms-transform: scale(1)
+		-o-transform: scale(1)
+		transform: scale(1)
+	
+@keyframes FadeIn
+	from
+		opacity: 0
+	to
+		opacity: 1
+	
+.cp
+	&-container
+		-ms-align-items: center
+		align-items: center
+		display: flex
+		-webkit-flex-direction: column
+		-moz-flex-direction: column
+		-ms-flex-direction: column
+		-o-flex-direction: column
+		flex-direction: column
+		height: 100%
+		-webkit-justify-content: center
+		-moz-justify-content: center
+		-ms-justify-content: center
+		-o-justify-content: center
+		justify-content: center
+		left: 0
+		position: fixed
+		top: 0
+		width: 100%
+		z-index: 1050
+	&-checkout
+		background: #fff
+		background-image: url(../img/ds.png)
+		background-size: 200px
+		background-repeat: no-repeat
+		background-position: 220px 157px
+		border-radius: 5px
+		box-shadow: 0 3px 10px rgba(#000, .3)
+		max-width: calc(100% - 5px)
+		overflow: hidden
+		width: 400px
+		z-index: 2
+	&-overlay
+		background: rgba(#000, .5)
+		height: 100%
+		left: 0
+		position: fixed
+		top: 0
+		width: 100%
+		z-index: 1		
+	&-header,
+	&-body,
+	&-footer
+		background: rgba(#fff, .9)
+	&-header
+		padding: 20px 10px 15px
+	&-title
+		// background: lighten(#007bff, 10%)
+		// color: #fff
+		padding: 0px 70px 15px
+		width: 100%
+		.text
+			font-weight: 600
+			font-size: 14px
+			display: block
+			// padding-left: 15px
+			width: 100%
+	&-nav
+		height: 50px
+		font-size: 13px
+		font-weight: 100
+		width: 100%		
+		.nav
+			> li
+
+	&-body
+		padding-bottom: 15px
+	&-footer
+		padding: 0px 35px 20px
+		width: 100%
+	&-checkbox,
+	&-input,
+	&-radio
+		-webkit-display: flex
+		-moz-display: flex
+		-ms-display: flex
+		-o-display: flex
+		display: flex
+		-webkit-flex-direction: row
+		-moz-flex-direction: row
+		-ms-flex-direction: row
+		-o-flex-direction: row
+		flex-direction: row
+		min-height: 50px
+		position: relative
+		-webkit-transition: .3s
+		-o-transition: .3s
+		transition: .3s
+		label
+			cursor: pointer
+			display: block
+			float: left
+			height: 50px
+			line-height: 50px
+			margin: 0
+			min-width: 70px
+			text-align: center
+			width: 70px
+			.icon
+				color: #aaa
+				font-size: 1.2em
+				padding-left: 20px
+		button
+			background: transparent
+			border: none
+			bottom: 0
+			color: #9bcbff
+			cursor: pointer
+			display: block
+			font-size: .7em
+			font-style: italic
+			left: 65px
+			margin-bottom: -3px
+			outline: none !important
+			position: absolute
+			
+	&-pg
+		color: #777
+		font-size: .7em
+		line-height: 1.5
+		margin: -15px 0 0
+		padding: 0 70px
+		width: 100%
+	&-input
+		.form-control
+			background-color: transparent
+			border: none
+			border-radius: 0
+			-webkit-box-shadow: none
+			box-shadow: none
+			color: #777
+			font-weight: 400
+			font-size: 12px
+			height: 50px
+			margin: 0
+			padding-left: 0
+			width: 100%
+			&::placeholder
+				opacity: .6
+			&:focus
+				&::placeholder
+					opacity: .4
+	&-checkbox,
+	&-radio
+		color: #000
+		label
+			font-size: 12px
+			font-weight: 600
+			padding-left: 70px
+			position: relative
+			text-align: left
+			vertical-align: middle
+			width: 100%
+			&:before,
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				-webkit-transform: translate(-50%, -50%)
+				-ms-transform: translate(-50%, -50%)
+				-o-transform: translate(-50%, -50%)
+				transform: translate(-50%, -50%)
+			&:before
+				border-radius: 3px
+				border: 3px solid #ccc
+				height: 20px
+				left: 35px
+				top: 25px
+				-webkit-transition: .3s
+				-o-transition: .3s
+				transition: .3s
+				width: 20px
+		input[type='checkbox']
+			display: none
+			&:checked
+				+ label
+					&:before
+						border-color: #007bff
+						border-right: none
+						border-top: none
+						border-width: 3px
+						height: 10px
+						left: 37px
+						top: 13px
+						-webkit-transform: rotate(-45deg) translate(-50%, -50%)
+						-ms-transform: rotate(-45deg) translate(-50%, -50%)
+						-o-transform: rotate(-45deg) translate(-50%, -50%)
+						transform: rotate(-45deg) translate(-50%, -50%)
+						width: 20px
+	&-radio
+		label
+			&:before
+				border-radius: 999px
+				border-width: 1px
+				height: 15px
+				left: 40px
+				width: 15px
+			&:after
+				background: #007bff
+				border: none
+				border-radius: 999px
+				display: none
+				height: 7px
+				left: 40px
+				top: 25px
+				width: 7px
+		input[type='radio']
+			display: none
+			&:checked
+				+ label
+					&:before
+						border-color: #007bff
+					&:after
+						display: block
+
+
+	&-button
+		background: #007bff
+		border: none
+		border-radius: 3px
+		color: #fff
+		cursor: pointer
+		display: inline-block
+		font-weight: 600
+		outline: none !important
+		padding: 7px 50px
+		text-align: center
+		-webkit-transition: .3s
+		-o-transition: .3s
+		transition: .3s
+		vertical-align: middle
+		&:hover
+			background: lighten(#007bff, 10%)
+			box-shadow: 0 3px 10px rgba(#007bff, .7)
+			background: lighten(#007bff, 10%)
+		&.prev
+			background: #fff
+			border: 1px solid #ddd
+			color: #ddd
+			&:hover
+				background: rgba(#aaa, .1)
+				box-shadow: 0 3px 10px rgba(#000, .1)
+		.icon
+			font-size: 2em
+			margin: 0px 10px
+			vertical-align: middle
+	&-file
+		border: 1px solid  #ddd
+		font-size: .8em
+		padding: 15px
+		&-title
+			border-bottom: 1px solid  #ddd
+			color: #777
+			padding-bottom: 15px
+		&-btn
+			background: #007bff
+			border: none
+			border-radius: 3px
+			color: #fff
+			cursor: pointer
+			outline: none !important
+			padding: 7px 30px
+			-webkit-transition: .3s
+			-o-transition: .3s
+			transition: .3s
+			&:hover
+				background: lighten(#007bff, 10%)
+				box-shadow: 0 3px 10px rgba(#007bff, .7)
+	&-dz
+		color: #777
+		padding: 30px
+		position: relative
+		text-align: center
+		width: 100%
+		&:before
+			content: attr(data-text)
+		&-file
+			cursor: pointer
+			height: 100%
+			left: 0
+			opacity: 0
+			position: absolute
+			top: 0
+			width: 100%
+
+.has-line
+	padding-right: 40px !important
+	position: relative
+	&:after
+		border-top: 1px solid #f6ebef
+		bottom: 100%
+		content: ''
+		display: block
+		left: 70px
+		position: absolute
+		width: calc(100% - 110px)
+
+
+#step-3
+	.cp
+		&-radio
+			padding: 0 70px
+			padding-right: 35px
+			position: relative
+			label
+				border: 1px solid  #ddd
+				border-radius: 3px
+				height: auto
+				line-height: 1.3
+				margin: 15px 0
+				position: static
+				padding: 15px
+				p
+					color: #777
+					font-weight: 400
+					margin-bottom: 0
+					margin-top: 5px
+#step-1
+	.cp
+		&-radio
+			margin-bottom: 10px
+
+.data-popover-content
+	display: none !important
+	opacity: 0 !important
+	visibility: hidden !important
+
+.popover
+	border: 1px solid #ddd
+	box-shadow: 0 3px 10px rgba(#000, .2)
+	border-radius: 5px
+	padding: 10px
+	.arrow
+		&:before
+			border-right-color: #ddd
+	&-header
+		background: transparent
+		font-size: 14px
+		padding: 0px 0px 10px
+	&-body
+		padding: 5px 0px 0
+		.list-group
+			&-item
+				color: #aaa
+				border-color: #f0f0f0
+				font-weight: 300
+				font-size: 12px
+				padding: 5px
+				b
+					color: #777
+					font-weight: 600
+
+.icon
+	&.checkmark
+		display: block
+		height: 150px
+		margin: auto
+		position: relative
+		-webkit-transform: rotate(-45deg)
+		-ms-transform: rotate(-45deg)
+		-o-transform: rotate(-45deg)
+		transform: rotate(-45deg)
+		width: 150px
+		&:before,
+		&:after
+			content: ''
+			display: block
+		&:before
+			animation: spin 1s
+			animation-delay: .5s
+			border: 5px solid #0c5
+			border-right-color: #fff
+			border-radius: 999px
+			height: 100%
+			position: relative
+			width: 100%
+		&:after
+			animation: zoomIn 1s
+			animation-delay: .5s
+			border: 5px solid #0c5
+			border-right: none
+			border-top: none
+			height: 30%
+			left: 50px
+			position: absolute
+			top: 45px
+			-webkit-transform-origin: bottom left
+			-moz-transform-origin: bottom left
+			-ms-transform-origin: bottom left
+			-o-transform-origin: bottom left
+			transform-origin: bottom left
+			width: 70%
+
+.tab
+	display: none
+	transition: 1s
+	&-content
+		position: relative
+		transition: .5s
+		overflow: hidden
+	&.in
+		display: block
+		position: relative
+		&.left
+			transform: translate(-100%)
+			position: absolute !important
+			left: 0
+			right: 0
+		&.right
+			transform: translate(100%)
+			position: absolute !important
+			left: 0
+			right: 0
+		&.open
+			transform: translate(0)
+	&.open
+		display: block
+		transform: translate(0)
+
+.loading
+	position: relative
+	&:after,
+	&:before
+		content: ''
+		display: block
+		position: absolute
+	&:before
+		background: #fff
+		height: 100%
+		left: 0
+		opacity: .8
+		top: 0
+		width: 100%
+		z-index: 100
+	&:after
+		animation: spin 1s linear infinite
+		background-color: transparent
+		border-radius: 999px
+		border: 2px solid #dfecfb
+		border-top-color: transparent
+		height: 70px
+		left: 50%
+		margin: -35px 0 0 -35px
+		top: 50%
+		width: 70px
+		z-index: 150
+
+		
+
+.owl-nav
+	display: none !important

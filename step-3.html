@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-cale=1.0">
+	<title>Checkout</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/checkout.css">
+	<link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css">
+</head>
+<body>
+	
+	<div class="cp-container">
+		<div class="cp-overlay"></div>
+		<div class="cp-checkout" id="step-3">
+			<div class="cp-header text-center">
+				<img src="../assets/img/logo-dark.png" alt="" height="30">
+			</div>
+			<div class="cp-title">
+				<div class="fig"></div>
+				<div class="text">Select Processing Option</div>
+			</div>
+			<div class="cp-body">
+				<div class="cp-radio">
+					<input type="radio" name="radio-group-1" id="rd-1">
+					<label for="rd-1">
+						Automatic Processing and Approval
+						<p>
+							An access fee of <b>N100</b> will be charged for instant processing, takes about one minute to complete
+						</p>
+					</label>
+				</div>
+				<div class="cp-radio">
+					<input type="radio" name="radio-group-1" id="rd-2">
+					<label for="rd-2">
+						Manual Processing and Approval
+						<p>
+							Process takes an average of 2-3 days
+						</p>
+					</label>
+				</div>
+			</div>
+			<div class="cp-footer clearfix">
+				<button class="cp-button float-left">Prev</button>
+				<button class="cp-button float-right">Next</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$(function () {
+			$('body').on('change', '.cp-radio input[type=radio]', function (ev) {
+				var group = $(this).closest('.cp-radio');
+
+			});
+		});
+	</script>
+</body>
+</html>

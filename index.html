@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkout</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css"> -->
+	<link rel="stylesheet" href="../assets/css/ionicons.min.css">
+	<link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/credpal.css">
+</head>
+<body class="h-100">
+
+
+	<div class="container h-100">
+		<div class="row flex align-items-center justify-center h-100">
+			<div class="col-md-7 col-lg-6 m-auto">
+				<div class="card shadow cp-card">
+					<div class="row">
+						<div class="col pr-0 cp-navigation-col closed">
+							<div class="h-100 pl-0 pr-0 border-0 cp-navigation pt-4">
+								<ul class="nav flex-column">
+									<li class="nav-item">
+										<a href="#step-1" class="nav-link active">
+											<span class="icon ion-ios-calculator"></span>
+											<!-- <span class="text">Order Summary</span> -->
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#step-2" class="nav-link">
+											<span class="icon ion-ios-contact-outline"></span>
+											<!-- <span class="text">User Information</span> -->
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#step-3" class="nav-link">
+											<span class="icon ion-ios-gear-outline"></span>
+											<!-- <span class="text">Processing Option</span> -->
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#step-4" class="nav-link">
+											<span class="icon ion-ios-photos-outline"></span>
+											<!-- <span class="text">Card Setup</span> -->
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#step-5" class="nav-link">
+											<span class="icon ion-ios-upload-outline"></span>
+											<!-- <span class="text">Upload Document</span> -->
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#step-6" class="nav-link">
+											<span class="icon ion-ios-checkmark-outline"></span>
+											<!-- <span class="text">Finish Up</span> -->
+										</a>
+									</li>
+								</ul>
+								<div class="mt-3 cp-powered-by">
+									<span class="text">
+										<span class="icon ion-ios-bolt"></span>
+										<small>Powered By </small>
+									</span>
+									<img src="../assets/img/logo-dark.png" alt="" class="full">
+									<img src="../assets/img/logo-mini.png" alt="" class="img-fluid mini">
+								</div>
+							</div>
+						</div>
+						<div class="col pl-0">
+
+							<div class="card-body shadow h-100 rounded-right">
+
+								<div class="tab-content">
+										
+									<div class="cp-form p-3 tab open in" id="step-1">
+										<p style="font-size: 13px"><b>Price:</b> N100,000</p>
+										<p>
+											Choose Payment Schedule For The Payment Including Interest
+										</p>
+
+										<div class="form-group">
+											<div class="cp-radio-label cp-radio-label-lg">
+												<input type="radio" name="schedule" id="schedule-1">
+												<label for="schedule-1">
+													<b>N100,000</b> For 1 Month
+												</label>
+												<button data-toggle="popover" data-title="Payment Breakdown">Beakdown</button>
+												<div class="data-popover-content">
+													<div class="list-group list-group-flush">
+														<div class="list-group-item">
+															<b>Month 1:</b> N10,000
+														</div>
+														<div class="list-group-item">
+															<b>Month 2:</b> N10,000
+														</div>
+														<div class="list-group-item">
+															<b>Month 3:</b> N10,000
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cp-radio-label cp-radio-label-lg">
+												<input type="radio" name="schedule" id="schedule-2">
+												<label for="schedule-2">
+													<b>N100,000</b> For 2 Months
+												</label>
+												<button data-toggle="popover" data-title="Payment Breakdown">Beakdown</button>
+												<div class="data-popover-content">
+													<div class="list-group list-group-flush">
+														<div class="list-group-item">
+															<b>Month 1:</b> N10,000
+														</div>
+														<div class="list-group-item">
+															<b>Month 2:</b> N10,000
+														</div>
+														<div class="list-group-item">
+															<b>Month 3:</b> N10,000
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cp-radio-label cp-radio-label-lg">
+												<input type="radio" name="schedule" id="schedule-3">
+												<label for="schedule-3">
+													<b>N100,000</b> For 3 Months
+												</label>
+												<button data-toggle="popover" data-title="Payment Breakdown">Beakdown</button>
+												<div class="data-popover-content">
+													<div class="list-group list-group-flush">
+														<div class="list-group-item">
+															<b>Month 1:</b> N10,000
+														</div>
+														<div class="list-group-item">
+															<b>Month 2:</b> N10,000
+														</div>
+														<div class="list-group-item">
+															<b>Month 3:</b> N10,000
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="cp-form p-3 tab" id="step-2">
+										<div class="row">
+											<div class="col">
+												<div class="form-group">
+													<label for="bday">Date Of Birth</label>
+													<input type="text" class="form-control datepicker" id="bday">
+												</div>
+											</div>
+											<div class="col">
+												<div class="form-group">
+													<label>Gender</label>
+													<div class="cp-radio-label">
+														<input type="radio" name="gender" value="male" id="male">
+														<label for="male">
+															<span class="icon ion-man" style="font-size: 20px"></span>
+														</label>
+													</div>
+													<div class="cp-radio-label pink">
+														<input type="radio" name="gender" value="female" id="female">
+														<label for="female">
+															<span class="icon ion-woman" style="font-size: 20px"></span>
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="bvn">BVN</label>
+											<input type="text" class="form-control" id="bvn">
+										</div>
+										<div class="form-group">
+											<label for="address">Home Address</label>
+											<input type="text" class="form-control" id="address">
+										</div>
+										<div class="row">
+											<div class="col-6">
+												<div class="form-group">
+													<label for="state">State</label>
+													<select class="form-control selectmenu" id="state">
+														<option>State</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6">	
+												<div class="form-group">
+													<label for="lga">LGA</label>
+													<select class="form-control selectmenu" id="lga">
+														<option>LGA</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-6">
+												<div class="form-group">
+													<label for="home_status">Home Status</label>
+													<select class="form-control selectmenu" id="home_status">
+														<option>Home Status</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-6">	
+												<div class="form-group">
+													<label for="employment_status">Employment Status</label>
+													<select class="form-control selectmenu" id="employment_status">
+														<option>Employed</option>
+														<option>Unemployment</option>
+														<option>Self Employed</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="cp-form p-3 tab" id="step-3">
+										
+										<div class="form-group">
+											<div class="cp-radio-label cp-radio-label-lg">
+												<input type="radio" name="method" id="method-1">
+												<label for="method-1">
+													<b style="font-weight: 500">Automatic Processing and Approval</b>
+													<p>
+														Access fee of <b>N100</b> for instant processing, takes about 1 minute
+													</p>
+												</label>
+											</div>
+											<div class="cp-radio-label cp-radio-label-lg">
+												<input type="radio" name="method" id="method-2">
+												<label for="method-2">
+													<b style="font-weight: 500">Manual Processing and Approval</b>
+													<p>
+														Process takes an average of 2-3 days
+													</p>
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="cp-form p-3 tab" id="step-4">
+										<img src="../assets/img/cc-grey.png" alt="" class="img-fluid cc-image">
+
+										<div class="text-center mt-4 mb-4">
+											<button type="button" class="btn btn-cp-light">Set Up Card</button>
+										</div>
+
+										<p>
+											A one time fee of <b>N100</b> will be deducted from your account
+										</p>
+
+									</div>
+
+									<div class="cp-form p-3 tab" id="step-5">
+										
+										<div class="alert alert-warning">Please Upload One Of The Following Documents</div>
+
+										<div class="cp-upload">
+											<h6 class="title">Bank Statement</h6>
+											<div class="text-center">
+												<p>
+													<label class="cp-upload-btn btn btn-outline-primary">
+														<span class="icon ion-android-document"></span> 
+														<span class="text">Choose File</span>
+														<input type="file" name="" id="">
+													</label>
+												</p>
+												<p>
+													<button type="button" class="btn btn-success">
+														<span class="ion-android-upload"></span>
+														<span class="text">Upload</span>
+													</button>
+												</p>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="cp-form p-3 tab" id="step-6">
+										
+										<div class="cp-checkmark mt-4 mb-4"></div>
+
+										<div class="alert alert-success text-center bg-transparent">
+											<b>Checkout Complete!</b>
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class="card-footer bg-transparent border-0 text-center clearfix">
+									<button class="btn btn-default float-lg-left float-md-left" data-prev>
+										<span class="icon ion-android-arrow-back mr-1"></span> Back
+									</button>
+									<button class="btn btn-cp float-lg-right float-md-right" data-next>Proceed</button>
+								</div>
+
+							</div>
+
+							<!-- Sidebar Collapse Button -->
+							<button class="btn btn-link btn-circle btn-expand">
+								<span class="icon ion-android-expand"></span>
+							</button>
+							<!-- Sidebar Collapse Button -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script src="../assets/js/jquery-ui.min.js"></script>
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$(function() {
+
+			function listen(a, b, c) {
+				return $('body').on(a, b, c);
+			}
+
+			listen('click', '.btn-expand', function(event) {
+				event.preventDefault();
+				var a = $('.cp-navigation-col');
+				a.hasClass('closed') ? a.removeClass('closed') : a.addClass('closed');
+			});
+
+
+			$('[data-toggle="popover"]').each(function(i, e) {
+				$(e).attr({
+					'data-content': $(e).siblings('.data-popover-content').html()
+				});
+			});
+			$('[data-toggle="popover"]').popover({
+				container: 'body',
+				html: true,
+				trigger: 'focus',
+			});
+
+			$('.datepicker').datepicker({
+
+			});
+
+			$('.selectmenu').selectmenu();
+
+			listen('change', '.cp-upload-btn input', function(event) {
+				var a = this.files[0];
+				var b = a ? a.name : 'Choose File';
+				$(this).siblings('.text').text(b);
+				if (a) {
+					$(this).parent().addClass('btn-block');
+				}else {
+					$(this).parent().removeClass('btn-block');
+				}
+			});
+
+			listen('click', '.cp-navigation .nav-link', function(event) {
+				event.preventDefault();
+				var a = $(this).attr('href');
+				a = $(a);
+				CP_SLIDE(a);
+			});
+
+			var CP_SLIDE_INDEX = 0;
+			var CP_SLIDE_LENGTH = $('.tab').length;
+			var CP_LAST_SLIDE = 0;
+			var CP_SLIDING = false;
+
+			listen('click', '[data-next], [data-prev]', function(event) {
+				event.preventDefault();
+
+				if (CP_SLIDING) {
+					return false;
+				}
+
+				CP_LAST_SLIDE = CP_SLIDE_INDEX;
+				if ($(this).is('[data-next]')) {
+					CP_SLIDE_INDEX = CP_SLIDE_INDEX < CP_SLIDE_LENGTH ? CP_SLIDE_INDEX + 1 : CP_SLIDE_INDEX;
+				}else if ($(this).is('[data-prev]')) {
+					CP_SLIDE_INDEX = CP_SLIDE_INDEX > 0 ? CP_SLIDE_INDEX - 1 : CP_SLIDE_INDEX;
+				}
+				var a = $('.tab#step-'+(CP_SLIDE_INDEX + 1));
+				console.log(CP_SLIDE_INDEX)
+
+				if (CP_SLIDE_INDEX == CP_LAST_SLIDE || CP_SLIDE_INDEX == CP_SLIDE_LENGTH) {
+					return false;
+				}
+
+				CP_SLIDE(a);
+			});
+
+			function CP_SLIDE(a) {
+				if (CP_SLIDING) {
+					return false;
+				}
+
+				CP_SLIDING = true;
+
+				var b = $('.tab.open');
+
+				if (a.index() > b.index()) {
+					b.addClass('left');
+					a.addClass('right');
+				}else {
+					b.addClass('right')
+					a.addClass('left');
+				}
+
+				$('.cp-checkout').addClass('loading');
+				b.removeClass('open');
+				a.addClass('in');
+				$('.tab-content').height(a.outerHeight() > b.outerHeight() ? a.outerHeight() : b.outerHeight());
+				setTimeout(function() {
+					a.addClass('open');
+				}, 1);
+				setTimeout(function() {
+					$('.tab-content').height(a.outerHeight());
+					b.removeClass('left right in open');
+					a.removeClass('left right');
+					$('.cp-checkout').removeClass('loading');
+				}, 600);
+				setTimeout(function() {
+					CP_SLIDING = false;
+				}, 1000);
+
+				$('.cp-navigation .nav-link').removeClass('active');
+				var c = $('[href="#'+$(a).attr('id')+'"]');
+				c.addClass('active');
+
+			};
+
+		});
+	</script>
+</body>
+</html>
