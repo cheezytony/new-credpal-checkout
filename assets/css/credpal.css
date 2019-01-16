@@ -199,13 +199,10 @@ body {
 }
 
 .cp-powered-by {
-  bottom: 0;
+  color: #fff;
   font-size: 0.9em;
-  left: 0;
-  opacity: 0.5;
   padding: 0 1rem;
   pointer-events: none;
-  position: absolute;
   text-align: center;
   width: 100%;
 }
@@ -216,10 +213,6 @@ body {
 
 .cp-powered-by img {
   height: 15px;
-}
-
-.cp-powered-by img.mini {
-  display: none;
 }
 
 .cp-powered-by .icon {
@@ -397,16 +390,6 @@ body {
   margin-left: -1px;
   outline: none !important;
   padding: 7px 10px;
-}
-
-.cp-radio-label.pink label {
-  border-color: rgba(255, 0, 144, 0.2);
-  color: #ff0090;
-}
-
-.cp-radio-label.pink input:checked + label {
-  background: rgba(255, 0, 144, 0.2);
-  border-color: rgba(255, 0, 144, 0.4);
 }
 
 .alert {
