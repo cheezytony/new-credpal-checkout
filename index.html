@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Checkout</title>
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css">
-	<!-- <link rel="stylesheet" href="assets/css/ionicons.min.css"> -->
-	<link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-	<link rel="stylesheet" href="assets/css/credpal.css">
+	<!-- <link rel="stylesheet" href="../assets/css/ionicons.min.css"> -->
+	<link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/credpal.css">
 </head>
 <body class="h-100">
 
@@ -150,13 +150,13 @@
 													<div class="cp-radio-label">
 														<input type="radio" name="gender" value="male" id="male">
 														<label for="male">
-															<span class="icon ion-man" style="font-size: 20px"></span>
+															<span class="icon ion-md-man" style="font-size: 20px"></span>
 														</label>
 													</div>
 													<div class="cp-radio-label pink">
 														<input type="radio" name="gender" value="female" id="female">
 														<label for="female">
-															<span class="icon ion-woman" style="font-size: 20px"></span>
+															<span class="icon ion-md-woman" style="font-size: 20px"></span>
 														</label>
 													</div>
 												</div>
@@ -235,7 +235,7 @@
 									</div>
 
 									<div class="cp-form p-3 tab" id="step-4">
-										<img src="assets/img/cc-grey.png" alt="" class="img-fluid cc-image">
+										<img src="../assets/img/cc-grey.png" alt="" class="img-fluid cc-image">
 
 										<div class="text-center mt-4 mb-4">
 											<button type="button" class="btn btn-cp-light">Set Up Card</button>
@@ -307,15 +307,15 @@
 						<span class="icon ion-ios-bolt"></span>
 						<small>Powered By </small>
 					</span>
-					<img src="assets/img/logo-dark.png" alt="" class="full">
+					<img src="../assets/img/logo-dark.png" alt="" class="full">
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<script src="assets/js/jquery-3.3.1.min.js"></script>
-	<script src="assets/js/jquery-ui.min.js"></script>
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="../assets/js/jquery-3.3.1.min.js"></script>
+	<script src="../assets/js/jquery-ui.min.js"></script>
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
 	<script>
 		$(function() {
 
@@ -362,6 +362,13 @@
 				event.preventDefault();
 				var a = $(this).attr('href');
 				a = $(a);
+				b = a.attr('id').match(/\d+/)[0] - 1;
+				CP_LAST_SLIDE = CP_SLIDE_INDEX;
+				console.log(CP_LAST_SLIDE, b);
+				if (CP_LAST_SLIDE == b) {
+					return false;
+				}
+				CP_SLIDE_INDEX = b;
 				CP_SLIDE(a);
 			});
 
@@ -379,7 +386,7 @@
 
 				CP_LAST_SLIDE = CP_SLIDE_INDEX;
 				if ($(this).is('[data-next]')) {
-					CP_SLIDE_INDEX = CP_SLIDE_INDEX < CP_SLIDE_LENGTH ? CP_SLIDE_INDEX + 1 : CP_SLIDE_INDEX;
+					CP_SLIDE_INDEX = CP_SLIDE_INDEX < CP_SLIDE_LENGTH - 1 ? CP_SLIDE_INDEX + 1 : CP_SLIDE_INDEX;
 				}else if ($(this).is('[data-prev]')) {
 					CP_SLIDE_INDEX = CP_SLIDE_INDEX > 0 ? CP_SLIDE_INDEX - 1 : CP_SLIDE_INDEX;
 				}
